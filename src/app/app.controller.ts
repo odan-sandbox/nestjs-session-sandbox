@@ -21,6 +21,8 @@ export class AppController {
     @Res() res: Response,
     @Query("state") state: string
   ): void {
+    // TODO: https://docs.nestjs.com/fundamentals/injection-scopes#request-provider
+    // これを使って透過的に扱える Cookie Store 的なやつを作らないと治安が悪くなる
     const cookieState = req.signedCookies["state"];
     console.log(state, cookieState);
     if (state && cookieState && state === cookieState) {
