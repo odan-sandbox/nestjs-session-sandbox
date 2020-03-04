@@ -4,8 +4,6 @@ import { randomBytes } from "crypto";
 
 @Controller()
 export class AppController {
-  constructor() {}
-
   @Get()
   home(): string {
     return "hello";
